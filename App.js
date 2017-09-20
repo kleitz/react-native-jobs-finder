@@ -1,23 +1,38 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { TabNavigator, StackNavigator } from 'react-navigation'
+
+import AuthScreen from './screens/AuthScreen'
+import DeckScreen from './screens/DeckScreen'
+import MapScreen from './screens/MapScreen'
+import ReviewScreen from './screens/ReviewScreen'
+import SettingScreen from './screens/SettingScreen'
+import WelcomeScreen from './screens/WelcomeScreen'
 
 export default class App extends React.Component {
-  render() {
+  render () {
+    const MainNavigator = TabNavigator({
+      welcome: { screen: WelcomeScreen },
+      auth: { screen: AuthScreen },
+      main: {
+        screen: TabNavigator({
+          map: { screen: MapScreen },
+          deck: { screen: DeckScreen },
+          review: {
+            screen: StackNavigator({
+              review: { screen: ReviewScreen },
+              setting: { screen: SettingScreen }
+            })
+          }
+        }, {
+          swipeEnabled: false,
+          animationEnabled: false
+        }
+      )
+      }
+    })
+
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
+      <MainNavigator />
+    )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
