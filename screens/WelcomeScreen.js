@@ -1,20 +1,20 @@
 import React from 'react'
-import { Text, View } from 'react-native'
 
 import Slides from '../components/Slides'
 
 const SLIDES_DATA = [
-  { text: 'Welcome to React Native Jobs Finder App' },
-  { text: 'Use this app to find jobs' },
-  { text: 'Swipe your location, then swipe away' }
+  { text: 'Welcome to React Native Jobs Finder App', color: '#f0aaaa' },
+  { text: 'Use this app to get jobs', color: '#aaf0aa' },
+  { text: 'Swipe your location, then swipe away', color: '#aaaaf0' }
 ]
 class WelcomeScreen extends React.Component {
+  onSlidesComplete = () => {
+    this.props.navigation.navigate('auth')
+  }
+
   render () {
     return (
-      <View>
-        <Text>WelcomeScreen</Text>
-        <Slides data={SLIDES_DATA} />
-      </View>
+      <Slides data={SLIDES_DATA} onComplete={this.onSlidesComplete} />
     )
   }
 }
