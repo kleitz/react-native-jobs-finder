@@ -4,7 +4,8 @@ import qs from 'qs'
 
 import {
   FETCH_JOBS,
-  LIKE_JOB
+  LIKE_JOB,
+  CLEAR_LIKED_JOBS
 } from './types'
 
 const JOB_QUERY_PARAMS = {
@@ -40,4 +41,8 @@ export const likeJob = (job) => {
     type: LIKE_JOB,
     payload: job
   }
+}
+
+export const clearLikedJobs = () => {
+  return { type: CLEAR_LIKED_JOBS }
 }
