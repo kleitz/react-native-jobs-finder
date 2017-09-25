@@ -49,7 +49,7 @@ class MapScreen extends React.Component {
           <Button
             large
             title='Search this area'
-            backgroundColor='#009866'
+            backgroundColor='#03a9f4'
             icon={{ name: 'search' }}
             onPress={this.onButtonPress}
           />

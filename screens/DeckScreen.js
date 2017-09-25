@@ -22,8 +22,9 @@ class DeckScreen extends React.Component {
         <View style={{ height: 300 }}>
           <MapView
             scrollEnabled={false}
+            pitchEnabled={false}
             style={{ flex: 1 }}
-            cacheEnabled={Platform.OS === 'android' ? true : false}
+            cacheEnabled={Platform.OS === 'android'}
             initialRegion={initialRegion}
           />
         </View>
