@@ -6,6 +6,7 @@ import { MapView } from 'expo'
 
 class ReviewScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
+    title: 'Review Jobs',
     headerTitle: 'Review Jobs',
     headerStyle: { marginTop: Platform.OS === 'android' ? 24 : 0 },
     tabBarIcon: ({ tintColor }) => {
