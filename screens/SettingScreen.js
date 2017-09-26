@@ -1,5 +1,5 @@
 import React from 'react'
-import { AsyncStorage, Text, View } from 'react-native'
+import { AsyncStorage, View } from 'react-native'
 import { Button } from 'react-native-elements'
 import { connect } from 'react-redux'
 import { clearLikedJobs } from '../actions'

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Linking, Platform, Text, ScrollView, View } from 'react-native'
-import { Button, Card } from 'react-native-elements'
+import { Button, Card, Icon } from 'react-native-elements'
 import { connect } from 'react-redux'
 import { MapView } from 'expo'
 
@@ -8,6 +8,9 @@ class ReviewScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     headerTitle: 'Review Jobs',
     headerStyle: { marginTop: Platform.OS === 'android' ? 24 : 0 },
+    tabBarIcon: ({ tintColor }) => {
+      return <Icon name='favorite' size={30} color={tintColor} />
+    },
     headerRight: <Button
       title='settings'
       onPress={() => navigation.navigate('setting')}
